@@ -507,12 +507,15 @@ const Footer = ({ magicMode }) => {
   const [form, setForm] = useState({ email: '', message: '' });
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
 
+  // ✅ Use env variable in Vite (frontend)
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('loading');
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch(`${API_URL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
@@ -532,6 +535,9 @@ const Footer = ({ magicMode }) => {
       setStatus('error');
     }
   };
+
+  // ... rest of your Footer JSX stays the same ...
+
 
   return (
     <footer className="relative border-t border-white/10 bg-[#0a0a0f] pt-20 pb-10">
