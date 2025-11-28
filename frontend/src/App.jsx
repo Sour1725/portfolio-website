@@ -508,7 +508,8 @@ const Footer = ({ magicMode }) => {
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
 
   // ✅ Use env variable in Vite (frontend)
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+  const API_URL = import.meta.env.VITE_API_BASE_URL;
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
