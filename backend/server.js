@@ -7,16 +7,20 @@ const contactRoutes = require('./routes/contactRoutes');
 
 const app = express();
 
-// --- MIDDLEWARE ---
+// --- CORS (IMPORTANT: Only ONE block & placed at top) ---
 app.use(cors({
-  origin: process.env.CLIENT_URL || '*',
-  credentials: true,
+  origin: [
+    process.env.CLIENT_URL,                     // your Vercel frontend
+    'http://localhost:5173'                     // local dev for Vite
+  ],
+  methods: ['GET', 'POST'],
+  credentials: true
 }));
 
 app.use(express.json());
 
 // --- DATABASE CONNECTION ---
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/portfolio_db';
+const MONGO_URI = process.env.MONGO_URI;
 
 mongoose.connect(MONGO_URI)
   .then(() => console.log('✅ MongoDB Connected Successfully'))
@@ -35,9 +39,3 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
-
-app.use(cors({
-  origin: process.env.CLIENT_URL,  // ONLY allow this domain
-  credentials: true
-}));
-
