@@ -397,7 +397,7 @@ const Projects = ({ magicMode }) => {
       cat: "Info Platform", 
       desc: "Fully responsive platform displaying global country details. Implemented search, region filter & dynamic routing using React Router.", 
       tech: ["React.js", "API Fetching", "CSS3"],
-      link: "#" // Add your link here
+      link: "https://react-country-sharmaa.vercel.app/country" // Add your link here
     },
     { 
       title: "Drive Storage System", 
