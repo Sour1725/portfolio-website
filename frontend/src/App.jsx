@@ -303,8 +303,8 @@ const Hero = ({ magicMode }) => {
           </div>
 
           <div className="flex gap-6 pt-8 text-gray-500">
-            <a href="https://github.com/sourav-sharma" className={`hover:${magicMode ? 'text-[#bc13fe]' : 'text-[#00f3ff]'} transition-colors`}><Github /></a>
-            <a href="https://linkedin.com/in/sourav-sharma" className={`hover:${magicMode ? 'text-[#bc13fe]' : 'text-[#00f3ff]'} transition-colors`}><Linkedin /></a>
+            <a href="https://github.com/Sour1725" className={`hover:${magicMode ? 'text-[#bc13fe]' : 'text-[#00f3ff]'} transition-colors`}><Github /></a>
+            <a href="https://www.linkedin.com/in/saurav-sharma-97080336a/" className={`hover:${magicMode ? 'text-[#bc13fe]' : 'text-[#00f3ff]'} transition-colors`}><Linkedin /></a>
           </div>
         </div>
 
